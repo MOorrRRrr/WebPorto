@@ -399,6 +399,85 @@ body {
 }
 
 @media (max-width: 768px) {
+    .header {
+        top: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    .nav {
+        width: calc(100% - 1rem);
+        padding: 0.75rem 1rem;
+        background-color: rgba(230, 239, 247, 0.9);
+        border-radius: 2rem;
+    }
+
+    .navbar__menu {
+        width: 100%;
+    }
+
+    .nav__list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav__link {
+        display: inline-block;
+        padding: 0.4rem 0.9rem;
+        text-align: center;
+        font-size: 14px;
+        width: auto;
+        min-width: 100px;
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        padding: 1rem 1rem 2rem;
+    }
+
+    .sub_hero {
+        flex: unset;
+        width: 100%;
+        margin-right: 0;
+        text-align: center;
+        font-size: 18pt;
+    }
+
+    #image-home {
+        width: 100%;
+        max-width: 100%;
+        margin: 1rem 0;
+        border-radius: 1.5rem;
+    }
+
+    .about-container {
+        flex-direction: column;
+        padding: 30px 5%;
+    }
+
+    .content-box {
+        flex-direction: column;
+        padding: 30px 25px;
+        gap: 1.5rem;
+        width: 100%;
+    }
+
+    .image-wrapper {
+        margin-right: 0;
+        margin-bottom: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .text-p {
+        font-size: 16pt;
+    }
+
     .skills-grid {
         grid-template-columns: 1fr;
     }
