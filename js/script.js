@@ -1,14 +1,39 @@
-// //toggle class active
-// const navbarNav = document.querySelector
+const cards = document.querySelectorAll('.skill-card');
+const dots = document.querySelectorAll('.dot');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
 
-// SHOW MENU
-const showMenu = (navId, toggleId) => {
-   const nav = document.getElementById(navId),
-         toggle = document.getElementById(toggleId)
+let currentIndex = 1; 
 
-   toggle.addEventListener('click', () => {
-      nav.classList.toggle('show-menu')
-      toggle.classList.toggle('show-icon')
-   })
+function updateCarousel(index) {
+    cards.forEach((card, i) => {
+        card.classList.remove('focus', 'side');
+        dots[i].classList.remove('active');
+        
+        if (i === index) {
+            card.classList.add('focus');
+            dots[i].classList.add('active');
+        } else {
+            card.classList.add('side');
+        }
+    });
 }
-showMenu('nav-menu','nav-toggle')
+
+// Event Klik Tombol
+nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % cards.length;
+    updateCarousel(currentIndex);
+});
+
+prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+    updateCarousel(currentIndex);
+});
+
+// Event Klik langsung pada kartu
+cards.forEach((card, i) => {
+    card.addEventListener('click', () => {
+        currentIndex = i;
+        updateCarousel(currentIndex);
+    });
+});
